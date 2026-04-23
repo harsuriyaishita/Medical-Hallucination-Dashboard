@@ -148,13 +148,20 @@ st.markdown("""
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:12px;
-    font-size:3.1rem;
+    gap:14px;
+
+    font-size:3.2rem;
     font-weight:900;
+
     color:#fbbf24;
+
+    padding:18px 10px;
+    margin-bottom:10px;
+
     background: linear-gradient(90deg, #0b1220, #111827);
-    padding: 18px;
-    border-radius: 14px;
+    border-radius:14px;
+
+    letter-spacing:0.5px;
 ">
 🧠 Medical Hallucination Dashboard
 </div>
