@@ -40,7 +40,7 @@ p, div, span, label {
 }
 
 /* MAIN TITLE CENTERED */
-h2 {
+h1 {
     font-size: 5rem !important;
     font-weight: 900;
     color: #fbbf24 !important;
@@ -143,7 +143,7 @@ textarea {
 # TITLE
 # =========================
 #st.title("🧠 Medical Hallucination Dashboard")
-st.markdown("<h2 style='text-align:center;'>🧠 Medical Hallucination Dashboard</h2>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align:center;'>🧠 Medical Hallucination Dashboard</h1>", unsafe_allow_html=True)
 
 
 st.caption("MedCPT + NLI + Hallucination Detection System")
