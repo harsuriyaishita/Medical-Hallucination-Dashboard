@@ -143,7 +143,17 @@ textarea {
 # TITLE
 # =========================
 #st.title("🧠 Medical Hallucination Dashboard")
-st.markdown("<h1 style='text-align:center;'>🧠 Medical Hallucination Dashboard</h1>", unsafe_allow_html=True)
+#st.markdown("<h1 style='text-align:center;'>🧠 Medical Hallucination Dashboard</h1>", unsafe_allow_html=True)
+st.markdown("""
+<div style="text-align:center;">
+    <h1 style="font-size:3.84rem; font-weight:900; color:#fbbf24; margin:0;">
+        🧠 Medical Hallucination Dashboard
+    </h1>
+    <p style="color:#94a3b8; font-size:16px;">
+        MedCPT + NLI + Hallucination Detection System
+    </p>
+</div>
+""", unsafe_allow_html=True)
 
 st.caption("MedCPT + NLI + Hallucination Detection System")
 
