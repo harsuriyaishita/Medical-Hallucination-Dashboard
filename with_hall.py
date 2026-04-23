@@ -12,13 +12,13 @@ from model import MedicalHallucinationDetector
 # PAGE CONFIG
 # =========================
 st.set_page_config(
-    page_title="MedRAG Dashboard",
+    page_title="Medical Hallucination Dashboard",
     layout="wide"
 )
 
 
 # =========================
-# 🎨 DARK SaaS UI (SIZE OPTIMIZED ~12% REDUCTION)
+# 🎨 DARK SaaS UI (PROFESSIONAL + 12% SMALLER CARDS + FIXED ALIGNMENT)
 # =========================
 st.markdown("""
 <style>
@@ -30,23 +30,27 @@ st.markdown("""
         radial-gradient(circle at 50% 80%, rgba(34,211,238,0.20), transparent 40%),
         linear-gradient(135deg, #0b1220, #111827);
     color: #e5e7eb;
-    font-size: 17px;
+    font-size: 16.5px;
 }
 
-/* TEXT */
+/* GLOBAL TEXT */
 p, div, span, label {
-    font-size: 18px !important;
+    font-size: 17px !important;
     color: #e2e8f0 !important;
 }
 
-/* HEADINGS */
+/* MAIN TITLE CENTERED */
 h1 {
     font-size: 2.6rem !important;
-    font-weight: 800;
+    font-weight: 900;
     color: #fbbf24 !important;
+    text-align: center;
+    margin-bottom: 0px;
 }
+
 h2, h3 {
     color: white !important;
+    text-align: center;
 }
 
 /* TEXT AREA */
@@ -54,7 +58,7 @@ textarea {
     background: #0f172a !important;
     color: #ffffff !important;
     border-radius: 12px !important;
-    font-size: 18px !important;
+    font-size: 17px !important;
     border: 1px solid #334155 !important;
 }
 
@@ -62,27 +66,41 @@ textarea {
 .stButton > button {
     background: linear-gradient(135deg, #10b981, #059669);
     color: white;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 700;
     border-radius: 10px;
 }
 
 /* =========================
-   📉 CARD SIZE REDUCED (~12%)
+   📉 REDUCED CARD SIZE (~12%)
 ========================= */
 .card {
-    padding: 14px;              /* was 16px */
+    padding: 13px;               /* ↓ reduced */
     border-radius: 14px;
     text-align: center;
-    box-shadow: 0 10px 18px rgba(0,0,0,0.28);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.35);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
 }
 
-/* METRIC TEXT REDUCED */
+/* PERFECT CENTER ALIGN INSIDE CARD */
+.card h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+}
+
 .metric {
-    font-size: 35px;            /* was 40px */
+    font-size: 32px;             /* ↓ reduced */
     font-weight: 900;
     color: #fbbf24;
-    line-height: 1.1;
+    margin-top: 6px;
+    text-align: center;
+    line-height: 1.2;
 }
 
 /* COLORS */
@@ -94,17 +112,17 @@ textarea {
 .contra-card { background: linear-gradient(135deg,#f97316,#c2410c); }
 
 /* =========================
-   🚨 HALLUCINATION CARD (slightly emphasized but reduced too)
+   🚨 HALLUCINATION CARD (slightly bigger than others but reduced)
 ========================= */
 .hallucination-card {
     background: linear-gradient(135deg, #f59e0b, #ef4444);
     border: 2px solid rgba(255,255,255,0.15);
-    padding: 13px;   /* reduced proportionally */
-    transform: scale(1.01);
+    padding: 14px;
+    transform: scale(1.03);
 }
 
 .hallucination-card .metric {
-    font-size: 30px !important;   /* reduced from 34 */
+    font-size: 30px !important;
     font-weight: 900;
     color: #ffffff;
 }
@@ -170,7 +188,7 @@ with col2:
 
 
 # =========================
-# HELPERS
+# HELPERS (UNCHANGED)
 # =========================
 def classify(consistency, risk):
     if consistency < 0.4 or risk > 0.6:
@@ -312,8 +330,3 @@ if st.button("🚀 Run Analysis"):
         st.markdown(highlight(ai_text, final_text, entail), unsafe_allow_html=True)
 
 
-# =========================
-# FOOTER
-# =========================
-st.markdown("---")
-st.caption("🚀 MedRAG SaaS Dashboard | Clinical AI Safety System")
