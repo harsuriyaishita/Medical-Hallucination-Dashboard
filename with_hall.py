@@ -41,7 +41,7 @@ p, div, span, label {
 
 /* MAIN TITLE CENTERED */
 h1 {
-    font-size: 2.6rem !important;
+    font-size: 3.2rem !important;
     font-weight: 900;
     color: #fbbf24 !important;
     text-align: center;
